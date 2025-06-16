@@ -1,0 +1,25 @@
+//Desenvolva um programa que leia uma sequência de letras (a... z) terminada em ponto (.) e que mostre quantas vezes cada vogal (a, e, i, o, u) apareceu na lista.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+char letra;
+int conta=0, conte=0, conti=0, conto=0, contu=0;
+while (letra != '.'){
+  printf ("Escreva uma letra: \n");
+  scanf (" %c", &letra);
+  if(letra=='a'){
+    conta++;
+  } else if (letra=='e'){
+    conte++;
+  } else if (letra=='i'){
+    conti++;
+  }else if (letra=='o'){
+    conto++;
+  }else if (letra=='u'){
+    contu++;
+  }
+}
+  printf (" Quantidade de As: %d\n Quantidade de Es: %d\n Quantidade de Is: %d\n Quantidade de Os: %d\n Quantidade de Us: %d\n", conta, conte, conti, conto, contu);
+
+  
+}
