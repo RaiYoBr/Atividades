@@ -1,0 +1,26 @@
+//Desenvolva um programa que leia uma sequência de números, podendo terminar com o número 0 ou 9. Para cada número lido (diferente de 0 ou 9), mostre seu sucessor caso o número seja par, ou seu antecessor se o número for ímpar.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int num;
+    int sucessor=1;
+    int antecessor=1;
+    printf ("Digite um número, 9 e 0 terminam o programa\n");
+    do
+    {
+          scanf ("%d", &num);
+        if (num%2==0){
+            sucessor = sucessor+num;
+            printf ("O sucessor e: %d\n", sucessor);
+            sucessor=1;
+        } else{
+            antecessor= num-antecessor;
+            printf ("O antecessor e: %d\n", antecessor);
+            antecessor=1;
+        }
+    } while (num !=0 && num !=9);
+
+    return 0;
+    
+}
