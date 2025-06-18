@@ -1,0 +1,39 @@
+//Desenvolva um programa que leia o salário bruto de 15 funcionários de uma empresa, calcule e exiba o salário líquido de cada funcionário. Lembre-se de que o salário líquido é calculado abatendo o imposto do salário bruto, com base na tabela de imposto abaixo. Ao final, mostre o total de salários brutos, salários líquidos e impostos de todos os funcionários.
+
+
+Faixa	Valor inicial	Valor final	% de imposto
+1	R$ 0.00	a R$ 999.00	10%
+2	R$ 999.01	a R$ 1.999,00	15%
+3	R$ 1.999.01	a R$ 9.999.00	20%
+4	R$ 9.999,01	a R$ 99.999.00	25%
+5	Acima R$ 99.999,01	---	30%
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+float salliquid, salbruto, imposto, totbruto = 0, totliquid = 0, totimposto = 0; 
+int cont;
+for (cont=1;cont<=5;cont++){
+printf ("Qual seu salario bruto para ser descontado o imposto\n");
+scanf ("%f", &salbruto);
+if (salbruto>999){
+    imposto = salbruto*0.1;
+} else if (salbruto>1999){
+    imposto = salbruto*0.15;
+} else if (salbruto>9999){
+    imposto = salbruto*0.2;
+} else if (salbruto>99999){
+    imposto = salbruto*0.25;
+} else{
+    imposto = salbruto*0.3;
+} 
+salliquid = salbruto-imposto;
+printf ("Seu salario liquido e: %.2f\n", salliquid);
+totbruto = totbruto + salbruto;
+totliquid = totliquid + salliquid;
+totimposto = totimposto + imposto;
+}
+printf ("Total Bruto: %.2f\n", totbruto);
+printf ("Total liquido: %.2f\n", totliquid);
+printf ("Imposto total: %.2f\n", totimposto);
+}
